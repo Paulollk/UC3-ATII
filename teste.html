@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário com Exportação</title>
+  <link rel="stylesheet" href="/teste.css">
+</head>
+<body>
+
+<h2>Países, Estados e Cidades</h2>
+<nav>
+  <ul>
+    <a href="/teste.html">HOME /</a>
+    <a href="/brasil.html">Brasil /</a>
+    <a href="/Estados Unidos.html">Estados Unidos /</a>
+    <a href="/Argentina.html">Argentina /</a>
+    <a href="/França,].html">França /</a>
+    <a href="/Japão.html">Japão</a>
+  </ul>
+</nav>
+<hr>
+<h1>Formulário de Cadastro</h1>
+<form id="formularioCadastro" class="fort">
+  <label for="nome">Nome:</label>
+  <input type="text" id="nome" name="nome" required><br><br>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required><br><br>
+
+  <label for="senha">Senha:</label>
+  <input type="password" id="senha" name="senha" required><br><br>
+
+  <label for="genero">Gênero:</label>
+  <select id="genero" name="genero" required>
+    <option value="">Selecione</option>
+    <option value="Masculino">Masculino</option>
+    <option value="Feminino">Feminino</option>
+    <option value="Outro">Outro</option>
+  </select><br><br>
+
+  <label>Origem:</label><br>
+  <input type="checkbox" name="origem" value="Brasil"> Brasil<br>
+  <input type="checkbox" name="origem" value="Outro"> Outro<br><br>
+
+  <button type="button" onclick="exportarCSV()">Exportar para CSV</button>
+  <button type="button" onclick="exportarTXT()">Exportar para TXT</button>
+</form>
+
+<hr>
+
+<table style="width:100%">
+  <tr>
+    <th>País</th>
+    <th>Estado</th>
+    <th>Cidade</th>
+  </tr>
+  <tr>
+    <td><a href="/brasil.html">Brasil</a></td>
+    <td><a href="/brasil.html">São Paulo</a></td>
+    <td><a href="/brasil.html">Campinas</a></td>
+  </tr>
+  <tr>
+    <td><a href="/Estados Unidos.html">Estados Unidos</a></td>
+    <td><a href="/Estados Unidos.html">Califórnia</a></td>
+    <td><a href="/Estados Unidos.html">Los Angeles</a></td>
+  </tr>
+  <tr>
+    <td><a href="/Argentina.html">Argentina</a></td>
+    <td><a href="/Argentina.html">Buenos Aires</a></td>
+    <td><a href="/Argentina.html">La Plata</a></td>
+  </tr>
+  <tr>
+    <td><a href="/França.html">França</a></td>
+    <td><a href="/França.html">Île-de-France</a></td>
+    <td><a href="/França.html">Paris</a></td>
+  </tr>
+  <tr>
+    <td><a href="/Japão.html">Japão</a></td>
+    <td><a href="/Japão.html">Osaka</a></td>
+    <td><a href="/Japão.html">Sakai</a></td>
+  </tr>
+</table>
+
+<script>
+  function validarFormulario() {
+    const nome = document.getElementById("nome").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const senha = document.getElementById("senha").value.trim();
+    const genero = document.getElementById("genero").value;
+    const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+
+    if (!nome || !email || !senha || !genero) {
+      alert("Por favor, preencha todos os campos obrigatórios.");
+      return false;
+    }
+
+    if (!emailRegex.test(email)) {
+      alert("E-mail inválido.");
+      return false;
+    }
+
+    return true;
+  }
+
+  function exportarCSV() {
+    if (!validarFormulario()) return;
+
+    const form = document.getElementById('formularioCadastro');
+    const formData = new FormData(form);
+    const origens = Array.from(document.querySelectorAll('input[name="origem"]:checked')).map(cb => cb.value);
+
+    const dados = {
+      nome: formData.get("nome"),
+      email: formData.get("email"),
+      senha: formData.get("senha"),
+      genero: formData.get("genero"),
+      origem: origens.join("; ")
+    };
+
+    const csv = "Nome,Email,Senha,Gênero,Origem\n" +
+                `"${dados.nome}","${dados.email}","${dados.senha}","${dados.genero}","${dados.origem}"`;
+
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "formulario.csv";
+    link.click();
+  }
+
+  function exportarTXT() {
+    if (!validarFormulario()) return;
+
+    const form = document.getElementById('formularioCadastro');
+    const formData = new FormData(form);
+    const origens = Array.from(document.querySelectorAll('input[name="origem"]:checked')).map(cb => cb.value);
+
+    let texto = "=== Dados do Formulário ===\n\n";
+    texto += "Nome: " + formData.get("nome") + "\n";
+    texto += "Email: " + formData.get("email") + "\n";
+    texto += "Senha: " + formData.get("senha") + "\n";
+    texto += "Gênero: " + formData.get("genero") + "\n";
+    texto += "Origem: " + origens.join(", ") + "\n";
+
+    const blob = new Blob([texto], { type: "text/plain;charset=utf-8;" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "formulario.txt";
+    link.click();
+  }
+</script>
+
+</body>
+</html>

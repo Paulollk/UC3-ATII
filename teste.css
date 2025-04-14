@@ -1,0 +1,50 @@
+    
+a:hover {
+    border: solid rgb(12, 9, 24);
+    background: rgb(196, 116, 12);
+    padding:  6px;
+    color: aliceblue;
+    border-radius: 5px;
+   }
+   table, th, td {
+    background: rgb(208, 211, 177);
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 40px;
+    padding: 25px;
+  }
+  body {
+    background-image: url(/52638102762_27c792929c_o-1-scaled-850x929.jpg)
+    }  
+    ul{
+        padding: 25px;
+        border: solid rgb(53, 53, 53);
+        background: rgb(230, 210, 193);
+        font-size: 35px;
+     }
+         
+
+     p {
+        color: rgb(206, 101, 15);
+    }
+    section {
+        border: solid black 1px;
+        background: #ded8a2;
+    }
+    form {
+        border: solid black;
+        background: #ded8a2;
+        padding: 40px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h1{
+     font-family: Arial, Helvetica, sans-serif;
+     color: blueviolet;
+      }
+      input {
+        border-radius: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        
+      }
+      
+ 
