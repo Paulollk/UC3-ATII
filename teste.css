@@ -1,50 +1,173 @@
-    
-a:hover {
-    border: solid rgb(12, 9, 24);
-    background: rgb(196, 116, 12);
-    padding:  6px;
-    color: aliceblue;
-    border-radius: 5px;
-   }
-   table, th, td {
-    background: rgb(208, 211, 177);
-    border: 1px solid black;
-    border-collapse: collapse;
-    margin: 40px;
-    padding: 25px;
-  }
-  body {
-    background-image: url(/52638102762_27c792929c_o-1-scaled-850x929.jpg)
-    }  
-    ul{
-        padding: 25px;
-        border: solid rgb(53, 53, 53);
-        background: rgb(230, 210, 193);
-        font-size: 35px;
-     }
-         
+  /* ------------------------- */
+/* ESTILO GERAL DO CORPO    */
+/* ------------------------- */
+body {
+  background-image: url(/52638102762_27c792929c_o-1-scaled-850x929.jpg);
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-     p {
-        color: rgb(206, 101, 15);
-    }
-    section {
-        border: solid black 1px;
-        background: #ded8a2;
-    }
-    form {
-        border: solid black;
-        background: #ded8a2;
-        padding: 40px;
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      h1{
-     font-family: Arial, Helvetica, sans-serif;
-     color: blueviolet;
-      }
-      input {
-        border-radius: 15px;
-        font-family: Arial, Helvetica, sans-serif;
-        
-      }
-      
- 
+/* ------------------------- */
+/* LINKS                    */
+/* ------------------------- */
+a:hover {
+  border: solid rgb(12, 9, 24);
+  background: rgb(196, 116, 12);
+  padding: 6px;
+  color: aliceblue;
+  border-radius: 5px;
+}
+
+/* ------------------------- */
+/* LISTA DE MENU            */
+/* ------------------------- */
+ul {
+  padding: 5px;
+  font-size: 35px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  list-style: none;
+}
+
+/* ------------------------- */
+/* PARÁGRAFOS               */
+/* ------------------------- */
+p {
+  color: rgb(206, 101, 15);
+}
+
+/* ------------------------- */
+/* CABEÇALHO                */
+/* ------------------------- */
+header {
+  text-align: center;
+  padding: 20px;
+  background: #d1c79d;
+  border-bottom: 2px solid black;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: blueviolet;
+}
+
+/* ------------------------- */
+/* TABELA                   */
+/* ------------------------- */
+table, th, td {
+  background: rgb(196, 204, 106);
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin: 40px auto;
+  padding: 25px;
+  text-align: center;
+}
+
+caption {
+  caption-side: top;
+  font-weight: bold;
+  padding: 10px;
+}
+
+/* ------------------------- */
+/* SEÇÃO (envolvendo form)  */
+/* ------------------------- */
+section {
+  border: solid black 1px;
+  background: #ded8a2;
+}
+
+/* ------------------------- */
+/* CONTAINER DO FORMULÁRIO  */
+/* ------------------------- */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ------------------------- */
+/* FORMULÁRIO               */
+/* ------------------------- */
+form {
+  border: solid black;
+  background: #ded8a2;
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+}
+
+input, textarea, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  background-color: rgb(196, 116, 12);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+button:hover, button:focus {
+  background-color: rgb(160, 90, 10);
+}
+/* Responsividade */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  ul {
+    flex-direction: column;
+    font-size: 1.2rem;
+  }
+
+  table, th, td {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  input, textarea, button {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  form {
+    padding: 1rem;
+  }
+}
+.carousel-inner img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+
+header ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+}
+
+header ul li {
+  display: inline;
+}
+
+header ul a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+}
