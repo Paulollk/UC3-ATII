@@ -1,13 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Document</title>
+  <title>Carrossel</title>
   <link rel="stylesheet" href="/teste.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+    .carousel-inner > .item > img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+    .carousel {
+      margin-top: 30px;
+    }
+    section {
+      padding: 20px;
+      text-align: center;
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.8); /* Fundo levemente transparente */
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      margin-top: 30px;
+    }
+    section p {
+      line-height: 1.8;
+      color: #333;
+      font-family: 'Arial', sans-serif;
+      font-size: 1.1rem;
+      text-align: justify;
+    }
+  </style>
 </head>
 <body>
 
@@ -23,9 +52,10 @@
     </ul>
   </header>
 
+  
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     
-    <!-- Indicadores -->
+    >
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -33,7 +63,7 @@
       <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>
 
-    <!-- Slides -->
+   
     <div class="carousel-inner">
       <div class="item active">
         <img src="/download (1).png" alt="Imagem 1">
@@ -48,8 +78,20 @@
         <img src="/download (4).png" alt="Imagem 4">
       </div>
     </div>
+  
+    <section>
+      <p>
+        Os Estados Unidos, conhecidos pela sua diversidade cultural e geográfica, são um destino que oferece de tudo, desde as icônicas cidades como Nova York e Los Angeles até os imponentes parques nacionais como o Grand Canyon e Yellowstone. A influência dos EUA na cultura pop, moda e tecnologia é inegável, sendo um dos maiores centros econômicos e culturais do mundo.
 
-    <!-- Controles -->
+        A Argentina, por sua vez, é um país que encanta com sua rica cultura e paisagens deslumbrantes. Desde os vinhedos da Mendoza até as Cataratas do Iguaçu, a Argentina oferece uma experiência única. Buenos Aires, sua capital, é um centro vibrante de arte, dança e gastronomia, com destaque para o tango e a culinária típica como o famoso churrasco argentino.
+        
+        O Japão, um país que combina tradições milenares com inovações tecnológicas, é fascinante pela sua cultura única e paisagens deslumbrantes. De templos antigos em Kyoto a arranha-céus futuristas em Tóquio, o Japão oferece uma viagem no tempo e ao mesmo tempo se mantém à frente no cenário mundial. Sua culinária, especialmente o sushi e ramen, é famosa internacionalmente.
+        
+        A França, berço de movimentos artísticos e culturais, é um dos destinos turísticos mais procurados no mundo. Com sua rica história, museus de renome, como o Louvre, e sua gastronomia mundialmente admirada, a França encanta a todos com sua elegância e charme. Paris, a "Cidade Luz", é famosa por seus monumentos como a Torre Eiffel, mas a França vai muito além, com regiões como a Provença, conhecida por seus campos de lavanda, e Bordeaux, famosa pelos seus vinhos.
+      </p>
+    </section>
+    
+    
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
       <span class="sr-only">Anterior</span>
@@ -59,11 +101,13 @@
       <span class="sr-only">Próximo</span>
     </a>
   </div>
+
+  <
   <script>
-    // Desativa a transição automática
-    $('.carousel').carousel({
-      interval: false
+    $('#myCarousel').carousel({
+      interval: 3000 // Tempo de intervalo entre as transições (3000ms = 3 segundos)
     });
   </script>
+
 </body>
 </html>

@@ -1,6 +1,4 @@
-  /* ------------------------- */
-/* ESTILO GERAL DO CORPO    */
-/* ------------------------- */
+
 body {
   background-image: url(/52638102762_27c792929c_o-1-scaled-850x929.jpg);
   background-size: cover;
@@ -9,9 +7,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ------------------------- */
-/* LINKS                    */
-/* ------------------------- */
+
 a:hover {
   border: solid rgb(12, 9, 24);
   background: rgb(196, 116, 12);
@@ -20,28 +16,29 @@ a:hover {
   border-radius: 5px;
 }
 
-/* ------------------------- */
-/* LISTA DE MENU            */
-/* ------------------------- */
-ul {
-  padding: 5px;
-  font-size: 35px;
-  display: flex;
-  gap: 20px;
-  justify-content: center;
+
+header ul {
   list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-/* ------------------------- */
-/* PARÁGRAFOS               */
-/* ------------------------- */
-p {
-  color: rgb(206, 101, 15);
+header ul li {
+  display: inline;
 }
 
-/* ------------------------- */
-/* CABEÇALHO                */
-/* ------------------------- */
+header ul a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+
+
 header {
   text-align: center;
   padding: 20px;
@@ -52,11 +49,11 @@ header {
 h1 {
   font-family: Arial, Helvetica, sans-serif;
   color: blueviolet;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-/* ------------------------- */
-/* TABELA                   */
-/* ------------------------- */
+
 table, th, td {
   background: rgb(196, 204, 106);
   border: 1px solid black;
@@ -66,48 +63,34 @@ table, th, td {
   text-align: center;
 }
 
-caption {
-  caption-side: top;
-  font-weight: bold;
-  padding: 10px;
-}
 
-/* ------------------------- */
-/* SEÇÃO (envolvendo form)  */
-/* ------------------------- */
-section {
-  border: solid black 1px;
-  background: #ded8a2;
-}
-
-/* ------------------------- */
-/* CONTAINER DO FORMULÁRIO  */
-/* ------------------------- */
 .form-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-/* ------------------------- */
-/* FORMULÁRIO               */
-/* ------------------------- */
+
+
 form {
-  border: solid black;
-  background: #ded8a2;
+  background: #ded8a2e8;
   padding: 40px;
-  border-radius: 10px;
+  border-radius: 15px;
   max-width: 500px;
-  width: 90%;
+  width: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid #333;
 }
 
-input, textarea, button {
+input, textarea, select, button {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
   font-size: 16px;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 1px solid #000;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
@@ -119,19 +102,27 @@ button {
   font-weight: bold;
   cursor: pointer;
   margin-top: 15px;
+  transition: background-color 0.3s ease;
 }
 
 button:hover, button:focus {
   background-color: rgb(160, 90, 10);
 }
-/* Responsividade */
+
+
+p {
+  color: rgb(206, 101, 15);
+}
+
+
 @media (max-width: 600px) {
   h1 {
     font-size: 1.5rem;
   }
 
-  ul {
+  header ul {
     flex-direction: column;
+    align-items: center;
     font-size: 1.2rem;
   }
 
@@ -140,7 +131,7 @@ button:hover, button:focus {
     padding: 8px;
   }
 
-  input, textarea, button {
+  input, textarea, button, select {
     font-size: 0.9rem;
     padding: 8px;
   }
@@ -149,25 +140,33 @@ button:hover, button:focus {
     padding: 1rem;
   }
 }
+
+
 .carousel-inner img {
   width: 100%;
   height: 600px;
   object-fit: cover;
 }
 
-header ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 10px;
+table {
+  background: rgb(196, 204, 106);
+  border-collapse: collapse;
+  margin: 40px auto;
+  text-align: center;
+  width: 90%;
+  max-width: 1000px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-header ul li {
-  display: inline;
+th, td {
+  border: 1px solid black;
+  padding: 20px;
+  font-size: 1.1rem;
 }
 
-header ul a {
-  text-decoration: none;
+caption {
+  caption-side: top;
   font-weight: bold;
-  color: #333;
+  padding: 10px;
+  font-size: 1.3rem;
 }
